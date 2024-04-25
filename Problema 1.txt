@@ -1,0 +1,130 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+  
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'FAQ',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('FAQ'),
+        ),
+        body: ListView.builder(
+          itemCount: faqList.length,
+          itemBuilder: (context, index) {
+            return ExpansionTile(
+              title: Text(faqList[index].Nombre),
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Text(
+                    faqList[index].Precio,
+                    style: TextStyle(fontSize: 16.0),
+                  ),
+                  
+                ),
+              ],
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class Plato {
+  final String Nombre;
+  final String Precio;
+  final String Imagen;
+
+  Plato({required this.Nombre, required this.Precio, required this.Imagen});
+}
+
+List<Plato> faqList = [
+  Plato(Nombre: 'Pollo a la brasa', Precio: 'S/25', Imagen: 'Imagen')
+];
+
+List<Plato> faqList = [
+  Plato(Nombre: 'Chaufa', Precio: 'S/11', Imagen: 'Imagen')
+];
+
+List<Plato> faqList = [
+  Plato(Nombre: 'Tallarin Saltado', Precio: 'S/10', Imagen: 'Imagen')
+];
+
+List<Plato> faqList = [
+  Plato(Nombre: 'Sopa Wantan', Precio: 'S/8', Imagen: 'Imagen')
+];
+
+List<Plato> faqList = [
+  Plato(Nombre: 'Papa Huancaina', Precio: 'S/10', Imagen: 'Imagen')
+];
+
+  // ------------ EJERCICIO 1 ------------- 
+
+  //@override
+  //Widget build(BuildContext context) {
+  //  return MaterialApp(
+  //    title: 'ListView Example',
+  //    home: Scaffold(
+  //      appBar: AppBar(
+  //        title: Text('ListView Example'),
+  //      ),
+  //      body: ListView(
+  //        children: <Widget>[
+
+  //          ListTile(
+  //            leading: Icon(Icons.home),
+  //            title: Text('Home'),
+  //            subtitle: Text('Home'),
+  //            onTap: () {
+
+  //            },
+  //          ),
+
+  //          ListTile(
+  //            leading: Icon(Icons.person),
+  //            title: Text('Profile'),
+  //            subtitle: Text('Profile'),
+  //            onTap: () {
+
+  //            },
+  //          ),
+
+  //          ListTile(
+  //            leading: Icon(Icons.message),
+  //            title: Text('Chat'),
+  //            subtitle: Text('Chat'),
+  //            onTap: () {
+
+  //            },
+  //          ),
+
+  //          ListTile(
+  //            leading: Icon(Icons.shopping_cart),
+  //            title: Text('Shopping Car'),
+  //            subtitle: Text('Shopping Car'),
+  //            onTap: () {
+
+  //            },
+  //          ),
+
+  //          ListTile(
+  //            leading: Icon(Icons.favorite),
+  //            title: Text('Favorites'),
+  //            subtitle: Text('Favorites'),
+  //            onTap: () {
+
+  //            },
+  //          ),
+  //        ],
+  //      ),
+  //    ),
+  //  );
+  //}
